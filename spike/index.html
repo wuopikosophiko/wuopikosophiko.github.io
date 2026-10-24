@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Заколка — BLE-срез</title>
+    <script type="module" crossorigin src="/spike/assets/index-CNZcTV3X.js"></script>
+    <link rel="stylesheet" crossorigin href="/spike/assets/index-Bz51uUxY.css">
+  </head>
+  <body>
+    <h1>Заколка — BLE-срез</h1>
+    <p id="support" class="warn" hidden></p>
+
+    <section>
+      <div class="row">
+        <button id="connect">Подключить</button>
+        <button id="disconnect" disabled>Отключить</button>
+        <button id="status" disabled>Статус</button>
+      </div>
+      <dl id="info"></dl>
+    </section>
+
+    <section>
+      <h2>Картинка</h2>
+      <canvas id="frame"></canvas>
+      <div class="row">
+        <label class="file">Выбрать фото<input id="file" type="file" accept="image/*" /></label>
+        <label>Слот
+          <select id="slot">
+            <option value="3" selected>Свой</option>
+            <option value="1">A</option>
+            <option value="2">B</option>
+          </select>
+        </label>
+        <label>Качество <input id="quality" type="number" min="0.3" max="0.95" step="0.05" value="0.85" /></label>
+      </div>
+      <div class="row">
+        <button id="send" disabled>Отправить</button>
+        <button id="speed" disabled>Тест скорости 450 КБ</button>
+        <button id="cancel" disabled>Отменить</button>
+      </div>
+      <progress id="progress" max="1" value="0"></progress>
+      <dl id="transfer"></dl>
+    </section>
+
+    <section>
+      <h2>Журнал</h2>
+      <div class="row">
+        <button id="copy-log">Скопировать журнал</button>
+        <label class="check"><input id="frames" type="checkbox" /> показывать байты</label>
+      </div>
+      <pre id="log"></pre>
+    </section>
+  </body>
+</html>
