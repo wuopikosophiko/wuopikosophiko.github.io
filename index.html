@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#FFF5EC" />
+    <meta name="description" content="Меняет то, что показывает заколка: бегущую строку, картинку или короткое видео" />
+    <title>Моя заколка</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/icon-any.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <script>
+      // Тема до первой отрисовки, без вспышки: настройку пишет приложение (ui/theme.ts)
+      try {
+        var t = localStorage.getItem('zk-theme');
+        var dark = t === 'dark' || (t !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/assets/index-CIk1LyIn.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-eRNLm7pz.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
